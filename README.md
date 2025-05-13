@@ -63,17 +63,17 @@ Useful for understanding signal formation, phase behavior, and acquisition artif
 **blochSimulations/**
 A teaching and research toolkit for visualizing core MRI signal phenomena:
 
-* *Slice selection* *
+* *Slice selection* 
 
-* *Off-center excitation and the Fourier shift theorem* *
+* *Off-center excitation and the Fourier shift theorem* 
 
-* *Phase encoding* *
+* *Phase encoding* 
 
-* *K-space filling and trajectory effects* * 
+* *K-space filling and trajectory effects* 
 
-* *Phase errors due to RF cycling mismatches in bSSFP* *
+* *Phase errors due to RF cycling mismatches in bSSFP* 
 
-* Banding artifact formation* * 
+* Banding artifact formation*  
 
 **uncle_sam_recon/**
 Code supporting the UNCLE SAM paper (unfolding coil-localized errors via structured matrix modeling).
