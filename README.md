@@ -58,26 +58,29 @@ Several scripts offload computation to the GPU using MATLAB’s gpuArray.
 
 
 
-## Folders
+## Folder Structure
 **reconstruction/** 
-My implementations signal recovery from phased-array data.
+Signal recovery from multichannel (phased-array) data. Core techniques include:
 
-Includes the following principles:
+
 % matched filtering, stochastic matched filters, spatial harmonics, and low-rank recovery.
 * *matched filtering*  
-*           (SENSE in MRI terminology)
+  Equivalent to SENSE in MRI; functionally identical to traditional SAR matched filtering.
 * *stochastic matched filtering * 
-*            (Adaptive Coil Combine):  The same method as the matched filter reconstruction of SAR signal.  
+  Adaptive methods for reconstructing signals with unknown or spatially varying profiles. 
 * *Spatial Beamforming* 
-*           I include a beamforming method used in MRI called Region Optimized Virtual Coils (ROVir).  I will later include a method I am working on publishing.  
+  Implements a technique called ROVir (Region-Optimized Virtual Coils), which spatially filters unwanted signals. A new beamforming method under development will also be added.
 * *Convolution Kernels to Estimate Fourier Spatial Harmonics (Done to reduce the sampling requirements needed in MRI)* *
-*           In the MRI community, this includes methods such as SMASH, GRAPPA, SPIRiT, and our structured low rank matrix recovery method called UNCLE SAM.
+  Reduces sampling requirements using methods analogous to SAR spatial harmonics. Includes SMASH, GRAPPA, SPIRiT, and a structured low-rank matrix recovery method we call UNCLE SAM.
 * *The generation of phased array channel sensitivity maps by taking the eigenvalue decomposition of the convolution kernels* *
-*           In MRI this is called * *E-SPIRiT* *  I will later share how I generalized this approach to perform the separation of fat-only and water-only sensitivity maps.
+  In MRI, this is known as ESPIRiT. We generalize this to extract fat-only vs. water-only sensitivity maps.
+
+
 * *The NUFFT and Gridding of non-uniformly sampled Fourier Coefficients* *
+  Tools for reconstructing signals from non-Cartesian (non-uniform) k-space sampling.
 
   
-Emphasizes structured signal separation and efficient inverse solvers for high-dimensional data.
+These tools emphasize spatial filtering, structured inverse solvers, and efficient modeling of high-dimensional sensor data.
 
 **flow_bSSFP_Bloch_Simulations/** 
 Bloch simulations supporting my "Slice Encoding for the Reduction of Outflow Effects in bSSFP Imaging" paper.
