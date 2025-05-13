@@ -83,46 +83,47 @@ Signal recovery from multichannel (phased-array) data. Core techniques include:
 These tools emphasize spatial filtering, structured inverse solvers, and efficient modeling of high-dimensional sensor data.
 
 **flow_bSSFP_Bloch_Simulations/** 
-Bloch simulations supporting my "Slice Encoding for the Reduction of Outflow Effects in bSSFP Imaging" paper.
+Simulations supporting the paper "Slice Encoding for the Reduction of Outflow Effects in bSSFP Imaging".
 
-Models flow dynamics and outflow-related artifacts in balanced steady-state sequences.
+  * Models flow artifacts and signal loss due to out-of-plane motion.
+
+  * Useful for understanding signal behavior in the presence of spatial misregistration.
 
 **spoiled_GRE_2D_ImageAcquisition/**
-Simulates k-space acquisition in gradient recalled echo (GRE) imaging of digital phantoms.
+Simulates 2D k-space acquisition of digital phantoms under gradient recalled echo (GRE) imaging.
 
-Useful for understanding signal formation, phase behavior, and acquisition artifacts.
+  * Helps visualize signal formation, phase behavior, and sampling artifacts.
+
+
 
 **blochSimulations/**
-A teaching and research toolkit for visualizing core MRI signal phenomena:
+A modular Bloch simulator toolkit for visualizing core MRI physics. Topics include:
 
-* *Slice selection* 
+  * Slice selection and excitation profiles
 
-* *Off-center excitation and the Fourier shift theorem* 
+  * Phase encoding and Fourier shift properties
 
-* *Phase encoding* 
+  * K-space trajectory simulation
 
-* *K-space filling and trajectory effects* 
-
-* *Phase errors due to RF cycling mismatches in bSSFP* 
-
-* Banding artifact formation*  
-
+  * Signal dropout and banding from phase inconsistencies
 **uncle_sam_recon/**
-Code supporting the UNCLE SAM paper (unfolding coil-localized errors via structured matrix modeling).
+Implements the UNCLE SAM method (Unfolding Coil-Localized Errors via Structured Matrix Modeling).
 
-Includes reconstruction techniques for recovering clean images from aliased or distorted multichannel data.
+  * Recovers high-fidelity images from aliased or corrupted multichannel data.
 
+  * Applies low-rank matrix modeling to isolate useful signal components.
 ## Relevance to Broader Signal Processing
-While this codebase is specific to MRI, the principles are broadly applicable:
+Although this codebase originates in MRI research, it applies to many sensor-driven imaging and signal reconstruction tasks:
 
-Multi-channel signal reconstruction
+ * Beamforming and spatial filtering
 
-Beamforming and spatial filtering
+ * Multi-channel signal recovery under noise and aliasing
 
-Statistical inference from noisy, incomplete measurements
+ * Statistical inference from partial or corrupted data
 
-GPU-based acceleration of real-time pipelines
+ * GPU-accelerated computation for real-time pipelines
 
-If you’re coming from radar, sonar, or other sensor array domains, you may find this work relevant for signal modeling, simulation, or algorithm development.
+Engineers working in radar, sonar, EEG/MEG, or other sensor-array domains may find these methods valuable for modeling, simulation, or algorithm prototyping.
 
-Feel free to explore and reach out with questions. This repository is a work in progress—additional reconstructions and simulation demos are being added.
+Feel free to explore and reach out with questions. This repository is a work in progress — more simulations and reconstruction pipelines are being added.
+
