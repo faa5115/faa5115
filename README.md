@@ -18,16 +18,45 @@ Here are some ideas to get you started:
 
 # Signal Modeling and Reconstruction in MRI
 
-Welcome to my research code repository. Although this work is grounded in medical imaging, the techniques implemented here reflect generalizable principles of signal processing, including phased-array signal reconstruction, spatial filtering, and inverse problem modeling. These approaches are directly relevant to applications such as radar imaging, sensor array processing, and beamforming.
+Welcome to my research code repository. While these tools were developed for medical imaging, the underlying techniques are broadly applicable to signal processing domains such as radar imaging, sensor array processing, and spatial beamforming.
+
+This work focuses on:
+
+Phased-array signal reconstruction
+
+Inverse problem modeling
+
+Statistical recovery from noisy or incomplete measurements
+
 
 ## Overview
+% This repository contains GPU-accelerated and CPU-based implementations of:
+%
+% Phased-array signal reconstruction, including stochastic matched filtering, spatial harmonic decomposition, and low-rank modeling
+%
+% Bloch simulations for understanding MRI physics and RF signal behavior during acquisition
+% 
+% The code emphasizes physical modeling, time-domain and k-space analysis, and statistical recovery of signal under measurement and aliasing constraints. Several scripts offload computation to the GPU using MATLAB's gpuArray for performance.
+
 This repository contains GPU-accelerated and CPU-based implementations of:
 
-Phased-array signal reconstruction, including stochastic matched filtering, spatial harmonic decomposition, and low-rank modeling
+ *  Phased-array signal reconstruction, including:
 
-Bloch simulations for understanding MRI physics and RF signal behavior during acquisition
+ *  Matched filtering
 
-The code emphasizes physical modeling, time-domain and k-space analysis, and statistical recovery of signal under measurement and aliasing constraints. Several scripts offload computation to the GPU using MATLAB's gpuArray for performance.
+ *  Stochastic matched filtering
+
+ *  Spatial harmonic decomposition
+
+ *  Low-rank matrix recovery
+
+ *  Bloch simulations for physical signal modeling and acquisition behavior
+
+ *  Efficient solvers and spatial filters under measurement constraints (aliasing, undersampling)
+
+Several scripts offload computation to the GPU using MATLAB’s gpuArray.
+
+
 
 ## Folders
 **reconstruction/** 
