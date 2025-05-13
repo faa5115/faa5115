@@ -16,10 +16,11 @@ Here are some ideas to get you started:
 -->
 
 
-Signal Modeling and Reconstruction in MRI
+# Signal Modeling and Reconstruction in MRI
+
 Welcome to my research code repository. Although this work is grounded in medical imaging, the techniques implemented here reflect generalizable principles of signal processing, including phased-array signal reconstruction, spatial filtering, and inverse problem modeling. These approaches are directly relevant to applications such as radar imaging, sensor array processing, and beamforming.
 
-Overview
+## Overview
 This repository contains GPU-accelerated and CPU-based implementations of:
 
 Phased-array signal reconstruction, including stochastic matched filtering, spatial harmonic decomposition, and low-rank modeling
@@ -28,45 +29,58 @@ Bloch simulations for understanding MRI physics and RF signal behavior during ac
 
 The code emphasizes physical modeling, time-domain and k-space analysis, and statistical recovery of signal under measurement and aliasing constraints. Several scripts offload computation to the GPU using MATLAB's gpuArray for performance.
 
-Folders
-reconstruction/
-Implements signal recovery from phased-array data.
+## Folders
+**reconstruction/** 
+My implementations signal recovery from phased-array data.
 
-Includes matched filtering, stochastic matched filters, spatial harmonics, and low-rank recovery.
+Includes the following principles:
+% matched filtering, stochastic matched filters, spatial harmonics, and low-rank recovery.
+* *matched filtering* *
+*   (SENSE in MRI terminology)
+* *stochastic matched filtering * *
+*    (Adaptive Coil Combine):  The same method as the matched filter reconstruction of SAR signal.  
+* *Spatial Beamforming* *
+*   I include a beamforming method used in MRI called Region Optimized Virtual Coils (ROVir).  I will later include a method I am working on publishing.  
+* *Convolution Kernels to Estimate Fourier Spatial Harmonics (Done to reduce the sampling requirements needed in MRI)* *
+*   In the MRI community, this includes methods such as SMASH, GRAPPA, SPIRiT, and our structured low rank matrix recovery method called UNCLE SAM.
+* *The generation of phased array channel sensitivity maps by taking the eigenvalue decomposition of the convolution kernels* *
+*   In MRI this is called * *E-SPIRiT* * 
+* *The NUFFT and Gridding of non-uniformly sampled Fourier Coefficients* *
 
+  
 Emphasizes structured signal separation and efficient inverse solvers for high-dimensional data.
 
-flow_bSSFP_Bloch_Simulations/
+**flow_bSSFP_Bloch_Simulations/** 
 Bloch simulations supporting my "Slice Encoding for the Reduction of Outflow Effects in bSSFP Imaging" paper.
 
 Models flow dynamics and outflow-related artifacts in balanced steady-state sequences.
 
-spoiled_GRE_2D_ImageAcquisition/
+**spoiled_GRE_2D_ImageAcquisition/**
 Simulates k-space acquisition in gradient recalled echo (GRE) imaging of digital phantoms.
 
 Useful for understanding signal formation, phase behavior, and acquisition artifacts.
 
-blochSimulations/
+**blochSimulations/**
 A teaching and research toolkit for visualizing core MRI signal phenomena:
 
-Slice selection
+* *Slice selection* *
 
-Off-center excitation and the Fourier shift theorem
+* *Off-center excitation and the Fourier shift theorem* *
 
-Phase encoding
+* *Phase encoding* *
 
-K-space filling and trajectory effects
+* *K-space filling and trajectory effects* * 
 
-Phase errors due to RF cycling mismatches in bSSFP
+* *Phase errors due to RF cycling mismatches in bSSFP* *
 
-Banding artifact formation
+* Banding artifact formation* * 
 
-uncle_sam_recon/
+**uncle_sam_recon/**
 Code supporting the UNCLE SAM paper (unfolding coil-localized errors via structured matrix modeling).
 
 Includes reconstruction techniques for recovering clean images from aliased or distorted multichannel data.
 
-Relevance to Broader Signal Processing
+## Relevance to Broader Signal Processing
 While this codebase is specific to MRI, the principles are broadly applicable:
 
 Multi-channel signal reconstruction
