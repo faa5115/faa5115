@@ -35,16 +35,16 @@ My implementations signal recovery from phased-array data.
 
 Includes the following principles:
 % matched filtering, stochastic matched filters, spatial harmonics, and low-rank recovery.
-* *matched filtering* *
-*   (SENSE in MRI terminology)
-* *stochastic matched filtering * *
-*    (Adaptive Coil Combine):  The same method as the matched filter reconstruction of SAR signal.  
-* *Spatial Beamforming* *
-*   I include a beamforming method used in MRI called Region Optimized Virtual Coils (ROVir).  I will later include a method I am working on publishing.  
+* *matched filtering*  
+*           (SENSE in MRI terminology)
+* *stochastic matched filtering * 
+*            (Adaptive Coil Combine):  The same method as the matched filter reconstruction of SAR signal.  
+* *Spatial Beamforming* 
+*           I include a beamforming method used in MRI called Region Optimized Virtual Coils (ROVir).  I will later include a method I am working on publishing.  
 * *Convolution Kernels to Estimate Fourier Spatial Harmonics (Done to reduce the sampling requirements needed in MRI)* *
-*   In the MRI community, this includes methods such as SMASH, GRAPPA, SPIRiT, and our structured low rank matrix recovery method called UNCLE SAM.
+*           In the MRI community, this includes methods such as SMASH, GRAPPA, SPIRiT, and our structured low rank matrix recovery method called UNCLE SAM.
 * *The generation of phased array channel sensitivity maps by taking the eigenvalue decomposition of the convolution kernels* *
-*   In MRI this is called * *E-SPIRiT* * 
+*           In MRI this is called * *E-SPIRiT* *  I will later share how I generalized this approach to perform the separation of fat-only and water-only sensitivity maps.
 * *The NUFFT and Gridding of non-uniformly sampled Fourier Coefficients* *
 
   
